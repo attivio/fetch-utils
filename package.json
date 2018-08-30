@@ -1,5 +1,5 @@
 {
-  "name": "fetchutils",
+  "name": "@attivio/fetchutils",
   "version": "0.0.1",
   "description": "Wrapper around the fetch() API to communicate with the Attivio REST APIs when authenticated with SAML.",
   "main": "./dist/index.js",
