@@ -51,7 +51,7 @@ The `FetchUtils.fetch()` method takes the following parameters:
 | method | HttpMethod (see below) | the HTTP method to use when making the fetch request |
 | defaultErrorMessage | string | the message that should be passed to the callback if an error occurs but no message can be obtained from the fetch() call |
 
-The **callback** function takes two parameters and has no return value:
+The **callback** function is called asynchronosly, once there is either a successful result or an error from the `fetch()` call. Its parameters are:
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
