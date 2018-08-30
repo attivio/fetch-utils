@@ -51,11 +51,11 @@ The `FetchUtils.fetch()` method takes the following parameters:
 | method | HttpMethod (see below) | the HTTP method to use when making the fetch request |
 | defaultErrorMessage | string | the message that should be passed to the callback if an error occurs but no message can be obtained from the fetch() call |
 
-The *callback* function takes two parameters and has no return value:
+The **callback** function takes two parameters and has no return value:
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | result | any \| null | a JavaScript object containing the result of a successful fetch() call; if an error occurred, this will be null |
 | error | string \| null | the error message describing what went wrong if the fetch() call didn't succeed; if it did succeed, this will be null |
 
-The type *HttpMethod* is one of the following strings: 'GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'CONNECT', 'OPTIONS', 'TRACE', or 'PATCH'.
+The type **HttpMethod** is one of the following strings: 'GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'CONNECT', 'OPTIONS', 'TRACE', or 'PATCH'.
