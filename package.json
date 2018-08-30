@@ -1,15 +1,30 @@
 {
-  "name": "@attivio/fetchutils",
+  "name": "@attivio/fetch-utils",
   "version": "0.0.1",
-  "description": "Wrapper around the fetch() API to communicate with the Attivio REST APIs when authenticated with SAML.",
+  "description": "Wrapper around the fetch() API to use when communicating with the Attivio REST APIs authenticated with SAML.",
+  "keywords": [
+    "Attivio",
+    "SAML",
+    "fetch",
+    "REST",
+    "SUIT",
+    "Search UI"
+  ],
+  "homepage": "http://www.attivio.com",
+  "bugs": {
+    "url": "https://github.com/attivio/searchui/issues",
+    "email": "suitbugs@attivio.com"
+  },
+  "license": "SEE LICENSE IN ../LICENSE.txt",
+  "author": "Attivio, Inc.",
   "main": "./dist/index.js",
+  "repository": "https://github.com/attivio/fetch-utils",
   "scripts": {
     "init": "mkdir dist",
     "clean": "rm -rf dist",
     "prebuild": "npm run clean && npm run init",
     "build": "babel ./src -d ./dist --ignore test.js"
   },
-  "author": "Attivio, Inc.",
   "devDependencies": {
     "babel-cli": "^6.16.0",
     "babel-core": "^6.17.0",
