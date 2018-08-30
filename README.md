@@ -1,5 +1,8 @@
 # @attivio/fetch-utils
 
+[![TravisCI][build-badge]][build]
+[![npmjs][npm-badge]][npm]
+
 This ia a library to use when accessing Attivio REST APIs with SAML-based authentication from a serverless web application such as a React single-page application. It contains a single function, `FetchUtils.fetch()` which you can use instead of calling the built-in `fetch()` API directly. This method does a few useful things for you:
 
 * It sets the headers and parameters to the `fetch()` call in a consistent manner
