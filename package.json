@@ -1,6 +1,6 @@
 {
   "name": "@attivio/fetch-utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Wrapper around the fetch() API to use when communicating with the Attivio REST APIs authenticated with SAML.",
   "keywords": [
     "Attivio",
