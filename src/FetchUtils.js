@@ -114,7 +114,7 @@ export default class FetchUtils {
     if (FETCH_UTILS_USE_WINDOW) {
       const closerUrl = `${baseUri} closer.html`;
       console.log('Going to open the closerUrl, which we think is: ', closerUrl);
-      const newWindow = window.open(closerUrl, 'attivio_validation', 'alwaysLowered=1,titlebar=0,dependent=1,location=0');
+      const newWindow = window.open(closerUrl, 'attivio_validation', 'alwaysLowered=1,dependent=1');
       console.log('Got a new Window', newWindow);
       if (newWindow) {
         newWindow.blur();
