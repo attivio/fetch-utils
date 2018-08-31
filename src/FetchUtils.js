@@ -2,6 +2,8 @@
 
 export type HttpMethod = 'GET' | 'HEAD' | 'POST' | 'PUT' | 'DELETE' | 'CONNECT' | 'OPTIONS' | 'TRACE' | 'PATCH';
 
+const FETCH_UTILS_USE_WINDOW = true;
+
 /**
  * Utility class to handle fetch requests for the Attivio REST
  * APIs. Attempts to handle SAML-related redirects to log into
@@ -84,7 +86,7 @@ export default class FetchUtils {
             const exceptionMessage = searchException.message ? searchException.message : '';
             const exceptionCode = searchException.errorCode ? ` (${(searchException.errorCode: string)
         })` : '';
-            const finalExceptionMessage = `${ defaultErrorMessage } ${ exceptionMessage } ${ exceptionCode } `;
+            const finalExceptionMessage = `${defaultErrorMessage} ${exceptionMessage} ${exceptionCode} `;
 
             callback(null, finalExceptionMessage);
           }).catch((badJsonError: any) => {
@@ -109,11 +111,18 @@ export default class FetchUtils {
    * @param baseUri   the base URI for the Attivio server
    */
   static forward(baseUri: string) {
-    const currentUri = window.location.href;
-    const encodedUri = encodeURIComponent(currentUri);
-    const newUri = `${ baseUri } rest / login ? uri = ${ encodedUri } `;
+    if (FETCH_UTILS_USE_WINDOW) {
+      const closerUrl = `${baseUri}closer.html`;
+      const newWindow = window.open(closerUrl, 'attivio_validation', 'alwaysLowered=1,titlebar=0,dependent=1,location=0');
+      newWindow.blur();
+      window.focus();
+    } else {
+      const currentUri = window.location.href;
+      const encodedUri = encodeURIComponent(currentUri);
+      const newUri = `${baseUri}rest/login?uri=${encodedUri}`;
 
-    window.location = newUri;
+      window.location = newUri;
+    }
   }
 
   /**
