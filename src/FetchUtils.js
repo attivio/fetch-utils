@@ -112,9 +112,13 @@ export default class FetchUtils {
    */
   static forward(baseUri: string) {
     if (FETCH_UTILS_USE_WINDOW) {
-      const closerUrl = `${baseUri}closer.html`;
+      const closerUrl = `${baseUri} closer.html`;
+      console.log('Going to open the closerUrl, which we think is: ', closerUrl);
       const newWindow = window.open(closerUrl, 'attivio_validation', 'alwaysLowered=1,titlebar=0,dependent=1,location=0');
-      newWindow.blur();
+      console.log('Got a new Window', newWindow);
+      if (newWindow) {
+        newWindow.blur();
+      }
       window.focus();
     } else {
       const currentUri = window.location.href;
