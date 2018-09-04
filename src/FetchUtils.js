@@ -110,7 +110,7 @@ export default class FetchUtils {
    */
   static forward(baseUri: string) {
     // First try to open a window behind ourselves that will trigger the SAML log in and close itself
-    const closerUrl = `${baseUri} closer.html`;
+    const closerUrl = `${baseUri}closer.html`;
     const newWindow = window.open(closerUrl, 'attivio_validation', 'alwaysLowered=1,dependent=1');
     if (newWindow) {
       // We were able to open the new window... it'll close itself once it manages to authenticate
