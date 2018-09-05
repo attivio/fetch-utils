@@ -129,8 +129,10 @@ export default class FetchUtils {
    * Get an error message to display to the user.
    *
    * @param error               the error received
-   * @param defaultErrorMessage a default message to show if error doesn't say anything
-   * @return                    a string representing the error that occurred
+   * @param defaultErrorMessage a default message to show if the actual error
+   *                            doesn't say anything
+   * @return                    a string representing the error that occurred,
+   *                            passed to the fetch() callback
    */
   static getErrorMessage(error: any, defaultErrorMessage: string): string {
     let message;
